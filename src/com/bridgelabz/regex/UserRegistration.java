@@ -8,7 +8,7 @@ public class UserRegistration {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Pattern pattern;
-		String firstName,lastName,email;
+		String firstName,lastName,email,mobileNumber;
 		Matcher matcher;
 
 		pattern = Pattern.compile("^[A-Z][a-z]{2,}");
@@ -31,7 +31,7 @@ public class UserRegistration {
 			System.out.println("Enter valid last name");
 		}
 		
-		pattern = Pattern.compile("abc(\\.xyz)?@bl\\.co(\\.in)?");
+		pattern = Pattern.compile("^abc(\\.xyz)?@bl\\.co(\\.in)?");
 		System.out.println("Enter the email");
 		while (true) {
 			email = scanner.nextLine();
@@ -39,6 +39,16 @@ public class UserRegistration {
 				break;
 			}
 			System.out.println("Enter valid email");
+		}
+		
+		pattern = Pattern.compile("^\\d{2}\\s\\d{10}");
+		System.out.println("Enter the mobile number");
+		while (true) {
+			mobileNumber = scanner.nextLine();
+			if (pattern.matcher(mobileNumber).matches()) {
+				break;
+			}
+			System.out.println("Enter valid mobile number");
 		}
 	}
 }
