@@ -44,11 +44,17 @@ public class UserRegistration {
 		System.out.println("Enter the password");
 		while (true) {
 			password = scanner.nextLine();
-			pattern = Pattern.compile(".{8,}");
-			if (pattern.matcher(email).matches()) {
-				break;
+			pattern = Pattern.compile(".{7,}");
+			if (!pattern.matcher(password).matches()) {
+				System.out.println("Enter valid password");
+				continue;
 			}
-			System.out.println("Enter valid password");
+			
+			pattern = Pattern.compile(".*[A-Z].*");
+			if (!pattern.matcher(password).matches()) {
+				System.out.println("Enter valid password");
+				continue;
+			}
 		}
 	}
 }
