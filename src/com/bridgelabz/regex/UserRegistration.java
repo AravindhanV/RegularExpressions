@@ -61,6 +61,12 @@ public class UserRegistration {
 				System.out.println("Enter valid password");
 				continue;
 			}
+			
+			pattern = Pattern.compile("^[a-zA-Z0-9]*[^a-zA-Z0-9][a-zA-Z0-9]*$");
+			if (!pattern.matcher(password).matches()) {
+				System.out.println("Enter valid password");
+				continue;
+			}
 		}
 	}
 }
