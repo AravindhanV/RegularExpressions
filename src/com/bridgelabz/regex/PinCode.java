@@ -8,7 +8,7 @@ public class PinCode {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter Pin Code");
-		Pattern pattern = Pattern.compile("\\d{6}");
+		Pattern pattern = Pattern.compile("^\\d{6}");
 		Matcher matcher = pattern.matcher(scanner.nextLine());
 		if(matcher.matches()) {
 			System.out.println("Input matches format");
