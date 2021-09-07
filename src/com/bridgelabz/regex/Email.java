@@ -8,7 +8,7 @@ public class Email {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter email");
-		Pattern pattern = Pattern.compile("^abc@bridgelabz");
+		Pattern pattern = Pattern.compile("^abc@bridgelabz\\.co");
 		Matcher matcher = pattern.matcher(scanner.nextLine());
 		if(matcher.matches()) {
 			System.out.println("Input matches format");
