@@ -8,7 +8,7 @@ public class UserRegistration {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Pattern pattern;
-		String firstName,lastName,email;
+		String firstName,lastName,email,password;
 		Matcher matcher;
 
 		pattern = Pattern.compile("^[A-Z][a-z]{2,}");
@@ -39,6 +39,16 @@ public class UserRegistration {
 				break;
 			}
 			System.out.println("Enter valid email");
+		}
+		
+		System.out.println("Enter the password");
+		while (true) {
+			password = scanner.nextLine();
+			pattern = Pattern.compile(".{8,}");
+			if (pattern.matcher(email).matches()) {
+				break;
+			}
+			System.out.println("Enter valid password");
 		}
 	}
 }
